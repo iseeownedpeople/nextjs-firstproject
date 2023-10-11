@@ -1,9 +1,6 @@
 "use client"; //para usar el hook navigator, client side
-import React from 'react'
-import {useParams} from "next/navigation"
-
-async function page(/* {params} */) { //sin usar params directo podemos usar el hook de useParams 
-  const params = useParams() //instanciamos el hook
+import React from 'react' 
+async function page({params}) { //sin usar params directo podemos usar el hook de useParams 
   console.log(params)
   const user = await getUser(params.id)
   return (
